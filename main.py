@@ -25,7 +25,7 @@ class Game:
 		self.letters = [Letter(value) for value in alphabet]
 
 		# words to guess 
-		self.word = "WHAT A CHEESE"
+		self.word = "PYTHON IS COOL"
 		self.password=""
 		for letter in self.word:
 			if letter.isalpha():
@@ -66,15 +66,15 @@ class Game:
 			
 			# drawing word to guess
 			self.font_word = self.font.render(self.password, True, (0,0,0))
-			self.window.blit(self.font_word, (400,250))
+			self.window.blit(self.font_word, (350,250))
 
 
 		# player won
 		else:
 			self.letters = []
-			font = pygame.font.Font('freesansbold.ttf', 35)
+			font = pygame.font.Font('freesansbold.ttf', 30)
 			ending = font.render("CONGRATULATION, YOU HAVE SAVED YOUR FRIEND!", True, (0, 0, 0))
-			self.window.blit(ending, (20,30))
+			self.window.blit(ending, (10,30))
 
 	def ifwin(self):
 
@@ -104,7 +104,7 @@ class Game:
 
 			self.draw()
 			pygame.display.update()
-			print(self.mistakes)
+			
 
 game = Game()
 game.run()
